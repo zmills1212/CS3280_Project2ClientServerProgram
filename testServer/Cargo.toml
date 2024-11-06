@@ -1,0 +1,11 @@
+[package]
+name = "test_server" 
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+base64 = "0.21" 
+log = "0.4" 
+env_logger = "0.10" 
+simplelog = "0.11"
+
