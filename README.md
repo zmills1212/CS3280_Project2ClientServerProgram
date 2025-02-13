@@ -30,3 +30,34 @@ Client-side-
 .Decodes and saves received sales reports.
 
 .Logs communication and errors.
+
+
+
+
+
+How to Run the Programs
+
+Set Up:
+
+Make sure Rust is installed on your machine. If not, install it from rust-lang.org.
+Open File Explorer on your Windows machine.
+Navigate to the project directory: \code\src.
+In the File Explorer search bar, type cmd and press Enter. This will open a command prompt at the current directory location.
+
+Navigate to the client project within the project folder by using cd and changing the directory to the client
+In another terminal window, navigate to the server directory by using the cd command in the terminal 
+
+Building the Program:
+
+In the command prompt, run:
+cargo build for both client and server.
+Must build client in client terminal window and server in server terminal window 
+
+Running the Program:
+
+After building, run the program by typing:
+cargo run in the server window first to create the server 
+Cargo run in the client window so that the client can now connect to the server
+
+Data for the branches and their weekly summaries are sent from the client  to the server
+Through a tcp connection.
