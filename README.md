@@ -50,8 +50,8 @@ This will initiate the data transfer process, with the client sending branch ide
 
 ## Files
 
-* `client/src/main.rs`:  Client-side code.
-* `server/src/main.rs`:  Server-side code.
+* `testclient/src/main.rs`:  Client-side code.
+* `testserver/src/main.rs`:  Server-side code.
 * `README.md`: This file.
 
 ## Data Flow
