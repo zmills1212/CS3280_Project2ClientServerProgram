@@ -1,63 +1,69 @@
-Sales Data Transfer System
+# Sales Data Transfer System
 
-Project Description
+This project implements a Rust-based client-server application for secure and efficient transfer of sales data. The client encodes sales reports in Base64 and transmits them over a TCP connection to the server, which decodes and organizes the data into branch-specific folders.
 
-This Sales Data Transfer System is a Rust-based client-server application designed to transfer sales data securely and efficiently.
-The client reads sales reports, encodes them in Base64, and sends them over a TCP connection. The server receives, decodes, and stores the reports in organized branch folders.
+## Features
 
-Features:
+**Client-side:**
 
-Client-side-
+* Reads sales data from a predefined file.
+* Encodes the data in Base64.
+* Establishes a TCP connection with the server.
+* Sends branch identification and sales data.
+* Logs communication and errors.
 
-.Reads sales data from a predefined file.
+**Server-side:**
 
-.Encodes the file in Base64.
+* Listens for incoming client connections.
+* Handles multiple clients concurrently using multithreading.
+* Creates branch-specific folders for storing sales data.
+* Decodes and saves received sales reports.
+* Logs communication and errors.
 
-.Establishes a TCP connection with the server.
+## How to Run
 
-.Sends branch identification and sales data.
+### Setup
 
-.Logs communication and errors.
+1. **Install Rust:** Ensure Rust is installed on your machine. If not, download and install it from [rust-lang.org](https://www.rust-lang.org/).
 
-.Server-side
+2. **Navigate to Project Directory:**
+   * Open File Explorer on your Windows machine.
+   * Navigate to the project directory: `\code\src`.
+   * In the File Explorer search bar, type `cmd` and press Enter to open a command prompt at the current directory.
 
-.Listens for incoming client connections.
+3. **Open Separate Terminals:**
+   * In one terminal window, navigate to the client directory using the `cd` command.
+   * In another terminal window, navigate to the server directory using the `cd` command.
 
-.Handles multiple clients using multithreading.
+### Building
 
-.Creates branch-specific folders for storing sales data.
+1. **Build Client and Server:**
+   * In the client terminal window, run: `cargo build`
+   * In the server terminal window, run: `cargo build`
 
-.Decodes and saves received sales reports.
+### Running
 
-.Logs communication and errors.
+1. **Start the Server:** In the server terminal window, run: `cargo run`
+2. **Start the Client:** In the client terminal window, run: `cargo run`
 
+This will initiate the data transfer process, with the client sending branch identification and weekly sales summaries to the server over a TCP connection.
 
+## Files
 
+* `client/src/main.rs`:  Client-side code.
+* `server/src/main.rs`:  Server-side code.
+* `README.md`: This file.
 
+## Data Flow
 
-How to Run the Programs
+1. The client reads sales data from a predefined file.
+2. The client encodes the sales data using Base64.
+3. The client establishes a TCP connection with the server.
+4. The client sends the branch ID and encoded sales data to the server.
+5. The server receives the data and decodes it.
+6. The server creates branch-specific folders if they don't exist.
+7. The server saves the decoded sales reports in the appropriate branch folders.
 
-Set Up:
+## Error Handling
 
-Make sure Rust is installed on your machine. If not, install it from rust-lang.org.
-Open File Explorer on your Windows machine.
-Navigate to the project directory: \code\src.
-In the File Explorer search bar, type cmd and press Enter. This will open a command prompt at the current directory location.
-
-Navigate to the client project within the project folder by using cd and changing the directory to the client
-In another terminal window, navigate to the server directory by using the cd command in the terminal 
-
-Building the Program:
-
-In the command prompt, run:
-cargo build for both client and server.
-Must build client in client terminal window and server in server terminal window 
-
-Running the Program:
-
-After building, run the program by typing:
-cargo run in the server window first to create the server 
-Cargo run in the client window so that the client can now connect to the server
-
-Data for the branches and their weekly summaries are sent from the client  to the server
-Through a tcp connection.
+Both client and server incorporate error handling and logging mechanisms to ensure robust operation and facilitate troubleshooting.
